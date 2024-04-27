@@ -1,0 +1,31 @@
+.body-area{
+    min-height: 300px;
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 15px red;
+}
+.selectItem{
+    min-width: 200px;
+    background-color: bisque;
+    border-radius: 30px;
+    padding: 5px;
+}
+.title{
+    border-radius: 10px;
+}
+.formField{
+    background-color: rgb(90, 131, 167);
+}
+.articleWindow{
+    /* border: 1px solid black; */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(175, 205, 250);
+}
+.personalInfoTab{
+    background-color: bisque;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: left;
+}

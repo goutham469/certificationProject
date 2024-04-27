@@ -1,0 +1,7 @@
+.mainBodyElement{
+    min-height: 90vh;
+}
+.bodyElement{
+    background: linear-gradient(to right,rgb(175, 207, 92),rgb(106, 112, 215),rgb(108, 204, 108));
+    background-repeat: no-repeat;
+}
