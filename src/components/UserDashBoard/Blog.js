@@ -4,7 +4,8 @@ import './userDashboard.css'
 function Blog() {
     let [articlesData,updateArticlesData]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4000/articles/getAll').then(data=>data.json()).then(data=>updateArticlesData(data.articles));
+        let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+        fetch(`${base_url}/articles/getAll`).then(data=>data.json()).then(data=>updateArticlesData(data.articles));
     })
   return (
     <div>

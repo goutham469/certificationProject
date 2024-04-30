@@ -27,7 +27,9 @@ function NewArticle() {
                 if(body!=null && body!=undefined)
                 {
                     updateBodyError();
-                    await fetch('http://localhost:4000/articles/getArticleId').then(data=>data.json()).then(async (x)=>{
+                    let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+                    console.log("base url in new article page",base_url);
+                    await fetch(`${base_url}/articles/getArticleId`).then(data=>data.json()).then(async (x)=>{
                         // console.log(x);
                         let articleData = {
                             articleId:x.count,
@@ -44,7 +46,8 @@ function NewArticle() {
                             downVotes:0
                         }
                         console.log(articleData);
-                        await fetch(`http://localhost:4000/articles/postArticle`,{
+                        let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+                        await fetch(`${base_url}/articles/postArticle`,{
                             method:'POST',
                             headers:{"Content-Type":"application/json"},
                             body:JSON.stringify(articleData)

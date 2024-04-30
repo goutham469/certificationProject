@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import store from '../../store';
 
+
 function SignIn() {
     let navigagate = useNavigate();
 
@@ -32,8 +33,10 @@ function SignIn() {
                     console.log(data);
                     // update redux state here
                     let url = '';
-                    if(typeUser == 'user'){url=`http://localhost:4000/user/checkPassword/?name=${data.email}`}
-                    else if(typeUser == 'author'){url=`http://localhost:4000/Author/checkPassword/?name=${data.email}`}
+                    let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+                    console.log(base_url)
+                    if(typeUser == 'user'){url=`${base_url}/user/checkPassword/?name=${data.email}`}
+                    else if(typeUser == 'author'){url=`${base_url}/Author/checkPassword/?name=${data.email}`}
 
                     
                      await fetch(url,{

@@ -30,7 +30,8 @@ function SignUp() {
                     // update redux state here
                     if(typeUser == 'user')
                     {
-                        await fetch(`http://localhost:4000/user/createUser`,{
+                        let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+                        await fetch(`${base_url}/user/createUser`,{
                             method:'POST',
                             headers:{"Content-Type":"application/json"},
                             body:JSON.stringify({"email":data.email,"password":data.password})
@@ -45,7 +46,8 @@ function SignUp() {
                     }
                     else if(typeUser == 'author')
                     {
-                        await fetch(`http://localhost:4000/Author/createAuthor`,{
+                        let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+                        await fetch(`${base_url}/Author/createAuthor`,{
                             method:'POST',
                             headers:{"Content-Type":"application/json"},
                             body:JSON.stringify({"email":data.email,"password":data.password})

@@ -11,7 +11,8 @@ function MyArticles() {
   let [articlesData,updateArticlesData] = useState([]);
   useEffect(()=>{
     // console.log(store.getState())
-    fetch(`http://localhost:4000/articles/getByAuthorName/?name=${store.getState().username}`).then(x=>x.json()).then(x=>updateArticlesData(x.articles));
+    let base_url = process.env.REACT_APP_SERVER_BASE_URL;
+    fetch(`${base_url}/articles/getByAuthorName/?name=${store.getState().username}`).then(x=>x.json()).then(x=>updateArticlesData(x.articles));
     // console.log(articlesData)
   })
   return (

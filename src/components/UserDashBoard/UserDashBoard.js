@@ -4,11 +4,12 @@ import store from '../../store';
 
 function UserDashBoard() {
   let navigate=useNavigate();
-  console.log(store.getState())
+  
   useEffect(()=>{
+    console.log(store.getState())
     if(store.getState().signed=='false')
     {
-      navigate('/signin');
+      navigate('/SignIn')
     }
   })
 

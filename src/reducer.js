@@ -4,7 +4,7 @@ export default function reducer(state = { signed: false, username: '',userType:'
         case 'SignUp':
             return { ...state, signed: true,username:action.userName,userType:action.userType };
         case 'LogOut':
-            return { ...state, signed: false,username:''};
+            return { ...state, signed: false,username:'',userType:''};
         default:
             return state;
     }
