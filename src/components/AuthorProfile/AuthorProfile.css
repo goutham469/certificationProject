@@ -1,6 +1,6 @@
 .body-area{
     min-height: 300px;
-    width: 400px;
+    width: 20em;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 3px 3px 15px red;
@@ -18,14 +18,32 @@
     background-color: rgb(90, 131, 167);
 }
 .articleWindow{
-    /* border: 1px solid black; */
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background-color: rgb(175, 205, 250);
+    background-color:rgb(151, 151, 151);
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 3px -3px 10px rgb(204, 222, 43);
 }
 .personalInfoTab{
     background-color: bisque;
     border-radius: 20px;
     padding: 20px;
     text-align: left;
+}
+.button009{
+    background-color: black;
+    color: goldenrod;
+    padding: 10px;
+}
+.button009:hover{
+    background-color: white;
+    color:black;
+}
+.textInCenter010{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: goldenrod;
+    font-size: 26px;
+    font-weight: 100;
 }

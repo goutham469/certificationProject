@@ -1,6 +1,7 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
+import Home from '../Home/Home';
 import Body from '../Body/Body'
 import SignIn from '../SignIn/SignIn';
 import SignUp from '../SignUp/SignUp';
@@ -23,7 +24,7 @@ function Description() {
             children:[
                 {
                     path:'',
-                    element:<SignIn/>
+                    element:<Home/>
                 },
                 {
                     path:'SignIn',

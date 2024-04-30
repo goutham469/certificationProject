@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Sedgwick+Ave+Display&display=swap');
+
+
+.textHeading1{
+    font-size: 36px;
+    animation: changeFontColor1;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+    font-family: "Sedgwick Ave Display", cursive;
+}
+@keyframes changeFontColor1{
+    0%{
+        color: violet;
+    }
+    20%{
+        color: indigo;
+    }
+    40%{
+        color: blue;
+    }
+    60%{
+        color: green;
+    }
+    80%{
+        color: yellow;
+    }
+    100%{
+        color: orange;
+    }
+    
+}
+.textHeading2{
+    font-size: 36px;
+    animation: changeFontColor2;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-iteration-count: infinite;
+
+}
+@keyframes changeFontColor2{
+    100%{
+        color: rgb(189, 60, 233);
+    }
+    80%{
+        color: rgb(242, 116, 116);
+    }
+    60%{
+        color: rgb(230, 235, 65);
+    }
+    40%{
+        color: rgb(164, 235, 105);
+    }
+    20%{
+        color: rgb(230, 184, 66);
+    }
+    0%{
+        color: rgb(71, 231, 207);
+    }
+    
+}
+.btn007{
+    background-color: rgb(236, 237, 237);
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    animation: changeButtonColor;
+    animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.btn007:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    animation: none;
+}
+@keyframes changeButtonColor{
+    0%{
+        background-color: white;
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+    25%{
+        background-color: rgb(204, 180, 180);
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    50%{
+        background-color: rgb(134, 96, 96);
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    75%{
+        background-color: rgb(128, 84, 84);
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}

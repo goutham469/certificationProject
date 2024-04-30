@@ -2,10 +2,12 @@ import React from 'react'
 import './AuthorProfile.css'
 import { useState } from 'react';
 import store from '../../store';
+import { useNavigate } from 'react-router-dom';
 
 function NewArticle() {
 
     let currentDate = new Date();
+    let navigate=useNavigate();
     
 
     let [title,updateTitle]=useState();
@@ -54,6 +56,7 @@ function NewArticle() {
                         }).then(x=>x.json()).then(x=>{
                             console.log(x)
                             alert(x.message)
+                            
                         })
                         
                     })
@@ -65,7 +68,7 @@ function NewArticle() {
     }
   return (
     <div className='formField'>
-        <h2 className='text-secondary'>Post new article</h2>
+        <h2 className='text-warning'>Post new article</h2>
         <form className='m-2'>
             <input className='title m-2' placeholder='title' onChange={(event)=>{updateTitle(event.target.value)}}/><br/>
             <p className='text-danger'>{titleError}</p>

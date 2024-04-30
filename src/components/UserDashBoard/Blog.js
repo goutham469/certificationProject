@@ -12,7 +12,7 @@ function Blog() {
         <h2>Blog</h2>
         <div className='row'>
             {
-                articlesData.map(x=><div className='col-lg-5 m-1 row'>
+                articlesData.map(x=><div className='col-lg-5 m-1 row articleBody009'>
                     <div className='userBlogContentItem'>
                         <div className='col-lg-6'>title : <b>{x.title}</b></div>
                         <div className='col-lg-6'>category :<b>{x.categery}</b></div>
