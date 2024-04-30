@@ -43,7 +43,45 @@
     text-align: center;
     justify-content: center;
     display: flex;
-    color: goldenrod;
+    color: rgb(249, 19, 2);
     font-size: 26px;
     font-weight: 100;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: fit-content;
+    margin-top: 15px;
+    background-color: black;
+    padding: 2px;
+}
+.textInCenter010:hover{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    color: rgb(0, 255, 8);
+    font-size: 28px;
+    font-weight: 100;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: fit-content;
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 2px;
+}
+.userBlogContentItem{
+    background-color:rgb(151, 151, 151);
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 3px -3px 10px rgb(204, 222, 43);
+}
+.articleData007{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-style: italic;
+    padding: 10px;
+}
+.FullArticle007{
+    background-image: url('./PaperBackground.png');
+    background-repeat: no-repeat;
+    color: black;
 }

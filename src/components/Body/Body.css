@@ -2,6 +2,44 @@
     min-height: 90vh;
 }
 .bodyElement{
-    background: linear-gradient(to right,rgb(175, 207, 92),rgb(106, 112, 215),rgb(108, 204, 108));
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
+    background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red); */
+    animation: backGroundChange;
+    animation-duration: 8s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+@keyframes backGroundChange{
+    0%{
+        background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red);
+        background-repeat: no-repeat;
+    }
+    14%{
+        background: linear-gradient(to right,indigo,blue,green,yellow,orange,red,violet);
+        background-repeat: no-repeat;
+    }
+    26%{
+        background: linear-gradient(to right,blue,green,yellow,orange,red,violet,indigo);
+        background-repeat: no-repeat;
+    }
+    40%{
+        background: linear-gradient(to right,green,yellow,orange,red,violet,indigo,blue);
+        background-repeat: no-repeat;
+    }
+    54%{
+        background: linear-gradient(to right,yellow,orange,red,violet,indigo,blue,green);
+        background-repeat: no-repeat;
+    }
+    68%{
+        background: linear-gradient(to right,orange,red,violet,indigo,blue,green,yellow);
+        background-repeat: no-repeat;
+    }
+    82%{
+        background: linear-gradient(to right,red,violet,indigo,blue,green,yellow,orange);
+        background-repeat: no-repeat;
+    }
+    96%{
+        background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red);
+        background-repeat: no-repeat;
+    }
 }

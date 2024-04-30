@@ -10,6 +10,8 @@ import AuthorProfile from '../AuthorProfile/AuthorProfile';
 import Profile from '../AuthorProfile/Profile';
 import MyArticles from '../AuthorProfile/MyArticles';
 import NewArticle from '../AuthorProfile/NewArticle';
+import AllArticles from '../AuthorProfile/AllArticles';
+import ViewFullArticle from '../AuthorProfile/ViewFullArticle';
 
 import UserDashBoard from '../UserDashBoard/UserDashBoard';
 import Blog from '../UserDashBoard/Blog';
@@ -53,6 +55,14 @@ function Description() {
                         {
                             path:'Profile',
                             element:<Profile/>
+                        },
+                        {
+                            path:'AllArticles',
+                            element:<AllArticles/>
+                        },
+                        {
+                            path:'FullArticle',
+                            element:<ViewFullArticle/>
                         }
                     ]
                 },

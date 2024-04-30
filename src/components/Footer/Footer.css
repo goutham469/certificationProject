@@ -1,3 +1,26 @@
 .footer{
     min-height: 20vh;
+    background-color: black;
+}
+.profileImage001{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.footerHelpInput{
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 30px;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 16px;
+    box-shadow: 5px 5px 5px goldenrod,-5px -5px 5px goldenrod;
+}
+.footerIcon001{
+    margin: 10px;
+}
+.textAlignLeft001{
+    text-align: left;
 }
