@@ -7,8 +7,9 @@ function UserDashBoard() {
   
   useEffect(()=>{
     console.log(store.getState())
-    if(store.getState().signed=='false')
+    if(store.getState().signed==false)
     {
+      // console.log("hi you are not signed in");
       navigate('/SignIn')
     }
   })

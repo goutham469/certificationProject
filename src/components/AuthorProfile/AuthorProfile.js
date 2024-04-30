@@ -13,6 +13,7 @@ function AuthorProfile() {
         // console.log("hi")
         if(store.getState().signed==false)
         {
+            console.log("hi you are not signed in");
             navigate('/SignIn')
         }
         else if(store.getState().userType == 'user')
