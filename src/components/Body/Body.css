@@ -3,12 +3,14 @@
 }
 .bodyElement{
     /* background-repeat: no-repeat;
-    background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red); */
+    background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red); 
     animation: backGroundChange;
     animation-duration: 8s;
     animation-timing-function:linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
+    background-color: rgb(241, 234, 220);
 }
+/* 
 @keyframes backGroundChange{
     0%{
         background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red);
@@ -42,4 +44,4 @@
         background: linear-gradient(to right,violet,indigo,blue,green,yellow,orange,red);
         background-repeat: no-repeat;
     }
-}
+} */

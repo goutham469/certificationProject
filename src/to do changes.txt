@@ -1,0 +1,8 @@
+                            1) update login page with animations completed
+                            2) update background theme
+                            3) upgrade to google OAuth2.0
+                            4) try using cookies for data storing
+                            5) implement upvotes,down votes,comments options
+6) implement profile viewing schema from clicking article author name.
+7) update password mechanism in profile
+8) update profile functionalities

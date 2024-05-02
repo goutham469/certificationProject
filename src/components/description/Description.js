@@ -5,6 +5,9 @@ import Home from '../Home/Home';
 import Body from '../Body/Body'
 import SignIn from '../SignIn/SignIn';
 import SignUp from '../SignUp/SignUp';
+import ForgotPassword from '../SignIn/ForgotPassword';
+
+import OauthSignUp from '../SignUp/OauthSignUp';
 
 import AuthorProfile from '../AuthorProfile/AuthorProfile';
 import Profile from '../AuthorProfile/Profile';
@@ -35,6 +38,14 @@ function Description() {
                 {
                     path:'SignUp',
                     element:<SignUp/>
+                },
+                {
+                    path:'accountRecovery',
+                    element:<ForgotPassword/>
+                },
+                {
+                    path:'OauthSignUp',
+                    element:<OauthSignUp/>
                 },
                 {
                     path:'AuthorProfile',

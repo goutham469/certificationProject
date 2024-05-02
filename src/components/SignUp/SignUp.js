@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import store from '../../store'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import googleImage from './googleImage.png'
+
 
 function SignUp() {
     let navigagate=useNavigate();
@@ -70,7 +73,7 @@ function SignUp() {
         <div className='col-lg-4'></div>
         <div className='col-lg-3 m-5'>
             <h1>Sign up or register</h1>
-            <form>
+            <form className='signInForm007'>
                 <input onClick={(event)=>{updateTypeUser('author')}} className='m-2' type='radio' id='author' name='author-user'></input><label for='author'>author</label>
                 
                 <input onClick={(event)=>{updateTypeUser('user')}} className='m-2' type='radio' id='user' name='author-user'/><label for='user'>user</label>
@@ -83,6 +86,11 @@ function SignUp() {
                 <input placeholder='password' type='password' className='password m-3' onChange={(event)=>{updatePassword(event.target.value)}} />
                 <p className='text-danger fs-7'>{passwordError}</p>
                 <button className='btn btn-success p-2 m-2' onClick={(event)=>{login(event)}}>Sign Up</button>
+                <br/>
+                <Link to='/OauthSignUp'><img width="50px" src={googleImage}/></Link>
+                <br/>
+                <br/>
+                <Link className='LinkToForgotPassword' to='/accountRecovery'>forgot password</Link>
             </form>
         </div>  
     </div>

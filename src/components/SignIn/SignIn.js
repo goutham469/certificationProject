@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import store from '../../store';
+import './SignIn.css'
+import { Link } from 'react-router-dom';
+import Login2 from './Login2';
 
 
 function SignIn() {
@@ -70,11 +73,7 @@ function SignIn() {
                         {
                             alert(`${x.message}`)
                         }
-                    })
-
-                    
-                    
-                    
+                    }) 
                 }
                 else{updatePasswordError('* enter your password *');}
             }else{updateEmailError('* enter your email id *');}
@@ -84,20 +83,24 @@ function SignIn() {
     <div className='row'>
         <div className='col-lg-4'></div>
         <div className='col-lg-3 m-5'>
-            <h1>Sign In or login</h1>
-            <form>
-                <input onClick={(event)=>{updateTypeUser('author')}} className='m-2' type='radio' id='author' name='author-user'></input><label for='author'>author</label>
+            <h1 className='text-success'>Login</h1>
+            <form className='signInForm007'>
+                <input onClick={(event)=>{updateTypeUser('author')}} className='m-2 signInFormRadio001' type='radio' id='author' name='author-user'></input><label for='author' className='signInFormRadio'>author</label>
                 
-                <input onClick={(event)=>{updateTypeUser('user')}} className='m-2' type='radio' id='user' name='author-user'/><label for='user'>user</label>
-                <input onClick={(event)=>{updateTypeUser('Admin')}} className='m-2' type='radio' id='admin' name='author-user'/><label for='admin'>Admin</label>
+                <input onClick={(event)=>{updateTypeUser('user')}} className='m-2' type='radio' id='user' name='author-user'/><label for='user' className='signInFormRadio'>user</label>
+                <input onClick={(event)=>{updateTypeUser('Admin')}} className='m-2' type='radio' id='admin' name='author-user'/><label for='admin' className='signInFormRadio'>Admin</label>
                 <p className='text-danger fs-7'>{typeUserError}</p>
                 <br/>
-                <input placeholder='email' type='email' className='email m-3' onChange={(event)=>{updateEmail(event.target.value)}} />
+                <input placeholder='email' type='email' className='email m-3 emailInputField' onChange={(event)=>{updateEmail(event.target.value)}} />
                 <p className='text-danger fs-7'>{emailError}</p>
                 
-                <input placeholder='password' type='password' className='password m-3' onChange={(event)=>{updatePassword(event.target.value)}} />
+                <input placeholder='password' type='password' className='password m-3 emailInputField' onChange={(event)=>{updatePassword(event.target.value)}} />
                 <p className='text-danger fs-7'>{passwordError}</p>
-                <button className='btn btn-success p-2 m-2' onClick={(event)=>{login(event)}}>Login</button>
+                <button className='btn formButton' onClick={(event)=>{login(event)}}>Login</button>
+                <br/>
+                <Login2/>
+                <br/>
+                <Link className='LinkToForgotPassword' to='/accountRecovery'>forgot password</Link>
             </form>
         </div>  
     </div>
