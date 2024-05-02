@@ -1,8 +1,29 @@
+                STAGE-1
                             1) update login page with animations completed
                             2) update background theme
                             3) upgrade to google OAuth2.0
                             4) try using cookies for data storing
                             5) implement upvotes,down votes,comments options
-6) implement profile viewing schema from clicking article author name.
+
+                STAGE-2
+6) implement profile viewing schema from clicking article author name:1) display author details,2)posts,3) highlights and achievements and education ,4) records of views,likes
 7) update password mechanism in profile
 8) update profile functionalities
+
+                STAGE-3
+9) update article structure make it like (linkedIn desktop version type)
+
+                STAGE-4
+10) add image upload feature during article posting
+
+                STAGE-5
+11) create and maintain meta Data about post likes views
+12) update articles meta Data in Author profile blog Data
+13) update forgot password component (conditional rendering not working)
+14) create Edit, Delete option for articles to author profile
+
+                STAGE-6
+15) create Admin Dashboard :-
+1) view all articles
+2) view all users,authors in table format with options to block user,flag as fraud.
+3) 

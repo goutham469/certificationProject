@@ -80,10 +80,10 @@ function SignIn() {
         }else{updateTypeUserError('*choose the type of user *');}
     }
   return (
-    <div className='row'>
+    <div className='row SignInComponentToSetBackGroungImage'>
         <div className='col-lg-4'></div>
         <div className='col-lg-3 m-5'>
-            <h1 className='text-success'>Login</h1>
+            <h1 className='headertobehighlighted'>Login</h1>
             <form className='signInForm007'>
                 <input onClick={(event)=>{updateTypeUser('author')}} className='m-2 signInFormRadio001' type='radio' id='author' name='author-user'></input><label for='author' className='signInFormRadio'>author</label>
                 

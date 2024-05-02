@@ -70,3 +70,10 @@
     background-color: black;
     color: rgb(255, 0, 0);
 }
+.SignInComponentToSetBackGroungImage{
+    background-image: url('./background.jpeg');
+    background-repeat: no-repeat;
+}
+.headertobehighlighted{
+    color: rgb(255, 230, 3);
+}
