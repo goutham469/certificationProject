@@ -3,6 +3,7 @@
     background-color: rgb(187, 172, 172);
     padding: 10px;
     animation: borderChange1 2s linear infinite;
+    margin-bottom: 20px;
 }
 
 @keyframes borderChange1 {

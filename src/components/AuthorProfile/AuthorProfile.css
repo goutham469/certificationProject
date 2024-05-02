@@ -15,7 +15,9 @@
     border-radius: 10px;
 }
 .formField{
-    background-color: rgb(90, 131, 167);
+    /* background-color: rgb(86, 131, 171); */
+    border: 1px solid rgb(86, 131, 171);
+    border-radius: 20px;
 }
 .articleWindow{
     background-color:rgb(151, 151, 151);
@@ -34,10 +36,11 @@
     background-color: black;
     color: goldenrod;
     padding: 10px;
+    border: 1px solid goldenrod;
 }
 .button009:hover{
     background-color: white;
-    color:black;
+    color:rgb(255, 221, 0);
 }
 .textInCenter010{
     text-align: center;

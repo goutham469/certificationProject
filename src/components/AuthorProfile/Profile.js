@@ -5,7 +5,7 @@ import './AuthorProfile.css'
 function Profile() {
   return (
     <div>
-      <h2>Profile</h2>
+      <h2 className='text-warning'>Profile</h2>
       <div className='row'>
       <div className='col-lg-5 m-1 personalInfoTab'>
         <h3 className='text-danger'>Personal info</h3>

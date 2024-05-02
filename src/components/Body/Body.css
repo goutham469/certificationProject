@@ -1,5 +1,5 @@
 .mainBodyElement{
-    min-height: 90vh;
+    min-height: auto;
 }
 .bodyElement{
     /* background-repeat: no-repeat;

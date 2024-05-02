@@ -12,7 +12,7 @@ function Header(props) {
     !store.getState().signed ?
     <div className='row header bg bg-primary'>
         <div className='col-lg-1 col-md-1 col-sm-2 col-xs-2 col-2 btn m-3' onClick={()=>{navigate('')}}><img width="100px" src={BlogImage}/></div>
-        <div className='col-lg-7 col-md-4 col-sm-3 col-xs-0 col-1'></div>
+        <div className='col-lg-6 col-md-3 col-sm-3 col-xs-0 col-10'></div>
         <div className='col-lg-1 col-md-1 col-sm-2 col-xs-2 col-2 button008 btn m-3' onClick={() => navigate('')}>Home</div>
         <div className='col-lg-1 col-md-1 col-sm-2 col-xs-2 col-2 button008 btn m-3' onClick={() => navigate('/SignUp')}>SignUp</div>
         <div className='col-lg-1 col-md-1 col-sm-2 col-xs-2 col-2 button008 btn m-3' onClick={() => navigate('/SignIn')}>SignIn</div>

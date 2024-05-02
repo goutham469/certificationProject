@@ -53,16 +53,19 @@ function AllArticles() {
     }
   return (
     <div className='row'>
+        <h2 className='text-warning'>All articles</h2>
         {
                 postsData.map(x=><div className='col-lg-3 m-1 row'>
                     <div className='userBlogContentItem' 
                     // onClick={(event)=>{event.preventDefault();window.open('/AuthorProfile/FullArticle')}}
                     >
-                        <div className='col-lg-10 p-3'>title : <b>{x.title}</b></div>
-                        <div className='col-lg-10'>category :<b>{x.categery}</b></div>
-                        <div className='col-lg-10'>author : <b>{x.author}</b></div>
+                        <div className='col-lg-10 p-3 text-primary'><center><b>{x.title}</b></center></div>
+                        <div className='col-lg-10'><a href={``}><b>{x.author}</b></a></div>
+                        <div className='col-lg-10'>category : <b>{x.categery}</b></div>
+
                         <div className='col-lg-10'>posted on : <b>{x.dateOfCreation}</b></div>
                         <div className='col-lg-10'>lastly modified on : <b>{x.lastUpdate}</b></div>
+
                         <div className='col-lg-12'>
                             <div className='articleData007'>{x.content}</div>
                         </div>
