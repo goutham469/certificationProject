@@ -98,7 +98,9 @@ function SignIn() {
                 <p className='text-danger fs-7'>{passwordError}</p>
                 <button className='btn formButton' onClick={(event)=>{login(event)}}>Login</button>
                 <br/>
-                <Login2/>
+                <div className='ToAlignItemsToPerfectCenter'>
+                    <Login2/>
+                </div>
                 <br/>
                 <Link className='LinkToForgotPassword' to='/accountRecovery'>forgot password</Link>
             </form>

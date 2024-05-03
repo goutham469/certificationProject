@@ -1,6 +1,6 @@
 .footer{
     min-height: 20vh;
-    background-color: black;
+    background-color: rgb(66, 72, 47);
 }
 .profileImage001{
     width: 180px;
@@ -16,11 +16,21 @@
     background-color: rgb(255, 255, 255);
     color: black;
     font-size: 16px;
-    box-shadow: 5px 5px 5px goldenrod,-5px -5px 5px goldenrod;
+    box-shadow: 3px 3px 5px goldenrod,-3px -3px 5px goldenrod;
 }
 .footerIcon001{
     margin: 10px;
 }
 .textAlignLeft001{
     text-align: left;
+    padding-left: 50px;
+}
+.FooterTextDecorationSetToNonUnderlined{
+    text-decoration: none;
+    color:goldenrod;
+}
+.FooterVNRVJIETLogo{
+    width: 110px;
+    display: inline-block;
+    /* mix-blend-mode:color-dodge; */
 }

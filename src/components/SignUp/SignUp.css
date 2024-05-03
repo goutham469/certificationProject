@@ -84,3 +84,16 @@
 .headertobehighlighted{
     color: rgb(255, 230, 3);
 }
+.OauthSignUpToSetBackGroundImage{
+    background-image: url('./background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    color: rgb(255, 255, 255);
+}
+.ToAlignItemsToPerfectCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

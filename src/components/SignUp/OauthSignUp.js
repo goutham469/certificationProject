@@ -4,12 +4,11 @@ import './SignUp.css'
 
 function OauthSignUp() {
   return (
-    <div className='row'>
+    <div className='OauthSignUpToSetBackGroundImage'>
         <h2>Google OAuth Register</h2>
         <p>your email id will be taken as the registering mail for this application.</p>
         <p>default password will be your emailid</p>
-        <div className='col-lg-5'></div>
-        <div className='col-lg-3'>
+        <div className='ToAlignItemsToPerfectCenter'>
             <Login/>
         </div>
     </div>

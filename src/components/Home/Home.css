@@ -3,10 +3,12 @@
 
 .textHeading1{
     font-size: 36px;
-    animation: changeFontColor1;
+    color: white;
+    text-shadow: 2px 2px 1px rgb(245, 63, 255);
+    /* animation: changeFontColor1;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
     font-family: "Sedgwick Ave Display", cursive;
 }
 @keyframes changeFontColor1{
@@ -32,10 +34,13 @@
 }
 .textHeading2{
     font-size: 36px;
-    animation: changeFontColor2;
+    font-family: "Sedgwick Ave Display", cursive;
+    color: white;
+    text-shadow: 2px 2px 1px rgb(208, 20, 255);
+    /* animation: changeFontColor2;
     animation-duration: 3s;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
 
 }
 @keyframes changeFontColor2{

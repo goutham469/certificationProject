@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Description from './components/description/Description';
 import {Helmet} from "react-helmet";
 
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Description/>
+      
     </div>
   );
 }

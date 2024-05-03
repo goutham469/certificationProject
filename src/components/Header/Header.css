@@ -1,15 +1,66 @@
 .header{
-    min-height: 10vh;
+    min-height: 30vh;
+    background-image: url('./HeaderBackground.png');
+    background-repeat: no-repeat;
+    background-attachment:local;
+    background-size: cover;
+    padding-top: 20px;
+    
 }
 .button008{
-    background-color: white;
     height: 40px;
+    color: goldenrod;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 0px;
 }
 .button008:hover{
-    background-color: black;
     color:white;
+    text-shadow: 3px 3px 1px red,-1px -1px 1px red;
 }
 .button008:focus{
     background-color: black;
     color: gold;
 }
+.text-heading-mainContent{
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+}
+.text-heading-mainContent{
+    text-shadow: 3px 3px 1px rgb(246, 10, 10);
+}
+.InputElementForSearchInHeaderOuter2{
+    width: 25em;
+    border: 0px solid white;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 0px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(170, 178, 185);
+}
+.InputElementForSearchInHeaderInner1{
+    border-radius: 50px;
+}
+.InputElementForSearchInHeaderInner1:hover{
+    border: 1px solid black;
+}
+.InputElementForSearchInHeaderInner2{
+    width: 20em;
+    height: 3em;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 0px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+.InputElementForSearchInHeaderOuterIsVisible{
+    visibility: hidden;
+}
+
+
