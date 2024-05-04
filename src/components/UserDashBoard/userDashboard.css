@@ -3,7 +3,7 @@
     border-radius: 20px;
     padding: 5px;
     margin: 10px;
-    box-shadow: 3px -3px 10px rgb(204, 222, 43);
+    /* box-shadow: 3px -3px 10px rgb(204, 222, 43); */
 }
 .personalInfoTab{
     background-color: bisque;

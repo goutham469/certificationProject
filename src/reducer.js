@@ -1,9 +1,19 @@
-export default function reducer(state = { signed: false, username: '', userType: '' }, action) {
+export default function reducer(state = { 
+    signed: false,
+    username: '',
+    userType: '',
+    commentWindowStatus:false,
+    PersonalData:[],
+    upVotedPosts:[],
+    downVotedPosts:[],
+    ProfileImageURL:'',
+    savedPosts:[]
+     }, action) {
     switch (action.type) {
         case 'SignIn':
         case 'SignUp':
             const now = new Date();
-            const expireTime = now.getTime() + 60 * 1000; // 60 seconds
+            const expireTime = now.getTime() + 600 * 1000; // 600 seconds
             now.setTime(expireTime);
             document.cookie = `username=${action.userName}; expires=${now.toUTCString()}; path=/;`;
             document.cookie = `userType=${action.userType}; expires=${now.toUTCString()}; path=/;`;
@@ -13,6 +23,8 @@ export default function reducer(state = { signed: false, username: '', userType:
             document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             document.cookie = "userType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             return { ...state, signed: false, username: '', userType: '' };
+        case 'CommentWindow':
+            return {...state,commentWindowStatus:action.setWindowStatus}
         default:
             return state;
     }

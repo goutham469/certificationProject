@@ -42,12 +42,15 @@
     background-color: white;
     color:rgb(255, 221, 0);
 }
+
+
+
 .textInCenter010{
     text-align: center;
     justify-content: center;
     display: flex;
     color: rgb(249, 19, 2);
-    font-size: 26px;
+    font-size: 18px;
     font-weight: 100;
     border: 1px solid black;
     border-radius: 10px;
@@ -61,29 +64,54 @@
     justify-content: center;
     display: flex;
     color: rgb(0, 255, 8);
-    font-size: 28px;
-    font-weight: 100;
+    font-size: 18px;
+    font-weight: 300;
     border: 1px solid black;
     border-radius: 10px;
     width: fit-content;
     margin-top: 15px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(56, 49, 49);
     padding: 2px;
 }
-.userBlogContentItem{
-    background-color:rgb(151, 151, 151);
+.textInCenter011{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: 100;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: fit-content;
+    margin-top: 1px;
+    background-color: rgb(99, 99, 99);
+    padding: 3px;
+}
+.textInCenter011:hover{
+    color: rgb(0, 255, 8);
+    font-size: 18px;
+    font-weight: 300;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: fit-content;
+    margin-top: 1px;
+    background-color: rgb(56, 49, 49);
+    padding: 2px;
+}
+
+
+
+.userBlogContentItem02{
+    background-color:rgb(167, 167, 167);
     border-radius: 20px;
     padding: 5px;
     margin: 10px;
-    box-shadow: 3px -3px 10px rgb(204, 222, 43);
+    /* box-shadow: 3px -3px 10px rgb(204, 222, 43); */
     text-align: left;
 }
 .articleData007{
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+    border-radius: 5px;
     font-style: italic;
-    padding: 10px;
-    margin: 10px;
+    padding: 3px;
+    margin-bottom: 2px;
 }
 .FullArticle007{
     background-image: url('./PaperBackground.png');
@@ -97,13 +125,83 @@
     border: 0px solid black;
 }
 .comments0052{
-    background-color: aliceblue;
+    background-color: rgb(165, 203, 237);
     border-radius: 10px;
-    padding: 10px;
+    padding-left: 5px;
+}
+.comments0053{
+    background-color: rgb(115, 156, 192);
+    border-radius: 10px;
+    margin-right: 5px;
+    padding: 3px;
+    text-align: justify;
 }
 .FaCommentDotssetpadding{
     margin-left: 30px;
-    width: 100px;
+    width: 40px;
     height: 30px;
-    margin: 5px;
+    margin: 1px;
+}
+
+
+.allArticlesWindow{
+    z-index: 10;
+}
+
+.CommentsWindowOuterEdge{
+    position:fixed;
+    top: 10px;
+    left: 5px;
+
+    background-color: rgb(146, 216, 163);
+
+    min-height: 100px;
+    width: 400px;
+    border-radius: 40px;
+    z-index: 5;
+
+    padding-bottom: 20px;
+}
+
+.toDisplayCommentBoxWithFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toCloseCommentsPopUpWindow{
+    position: absolute;
+    top: 10px;
+    left: 160px;
+    border-radius: 20px;
+
+}
+
+.AllArticlesTotalNoOfComments{
+    font-size: 14px;
+    position: relative;
+    bottom: 6px;
+    left: 3px;
+
+    
+    border-radius: 20px;
+    
+}
+
+.OptionTypeForScrollingComments{
+    height: 400px;
+    overflow-y: scroll;
+}
+.CommentWindowPostCommentInput{
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+}
+.NameOverFlow{
+    overflow-x: scroll;
+}
+.NameOverFlow::-webkit-scrollbar{
+    height: 3px;
+    
 }

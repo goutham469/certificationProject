@@ -11,11 +11,12 @@ function NewArticle() {
     
 
     let [title,updateTitle]=useState();
-    let [category,updateCategory]=useState()
+    let [category1,updateCategory]=useState()
     let [body,updateBody]=useState();
     let [titleError,updateTitleError]=useState()
     let [categoryError,updateCategoryError]=useState()
     let [bodyError,updateBodyError]=useState()
+    let [changeState,updateChangeState]=useState(0)
 
     async function post(event)
     {
@@ -23,20 +24,20 @@ function NewArticle() {
         if(title!=null && title!=undefined)
         {
             updateTitleError();
-            if(category!=null && title!=undefined)
+            if(category1!=null && title!=undefined)
             {
                 updateCategoryError();
                 if(body!=null && body!=undefined)
                 {
                     updateBodyError();
                     let base_url = process.env.REACT_APP_SERVER_BASE_URL;
-                    console.log("base url in new article page",base_url);
+                    // console.log("base url in new article page",base_url);
                     await fetch(`${base_url}/articles/getArticleId`).then(data=>data.json()).then(async (x)=>{
                         // console.log(x);
                         let articleData = {
                             articleId:x.count,
                             title:title,
-                            category:category,
+                            category:category1,
                             author:store.getState().username,
                             content:body,
                             dateOfCreation:`${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} - ${currentDate.getDate()}/${currentDate.getMonth()}/${currentDate.getFullYear()}`,
@@ -54,8 +55,9 @@ function NewArticle() {
                             headers:{"Content-Type":"application/json"},
                             body:JSON.stringify(articleData)
                         }).then(x=>x.json()).then(x=>{
-                            console.log(x)
-                            alert(x.message)
+                            // console.log(x)
+                            // alert(x.message)
+                            navigate('/AuthorProfile/MyArticles')
                             
                         })
                         
@@ -73,13 +75,8 @@ function NewArticle() {
             <input className='title m-2' placeholder='title' onChange={(event)=>{updateTitle(event.target.value)}}/><br/>
             <p className='text-danger'>{titleError}</p>
 
-            <select className='m-2 selectItem' onChange={(event)=>{updateCategory(event.target.value)}} >
-                <option>none</option>
-                <option>technology</option>
-                <option>agriculture</option>
-                <option>education</option>
-                <option>others</option>
-            </select><br/>
+            <input className='m-2 title' placeholder='categery' onChange={(event)=>{updateCategory(event.target.value)}} ></input>
+                <br/>
             <p className='text-danger'>{categoryError}</p>
 
             <textarea className='body-area m-2' placeholder='body' onChange={(event)=>{updateBody(event.target.value)}}/><br/>

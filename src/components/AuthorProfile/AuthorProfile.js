@@ -49,7 +49,7 @@ function AuthorProfile() {
         <div className='col-lg-1 col-md-1 col-sm-2 col-xs-2 col-3 btn button009 m-2' onClick={(event)=>{event.preventDefault();navigate('./MyArticles')}}>My articles</div>
         <div className='row'>
             {/* <div className='col-lg-3 col-md-4 col-sm-0 col-xs-0 col-0'></div> */}
-            <div className='col-lg-12 col-md-8 col-sm-10 col-xs-12 col-12'>
+            <div className='col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12'>
                 <Outlet/>
             </div>
         </div>

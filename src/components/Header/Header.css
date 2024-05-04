@@ -33,14 +33,14 @@
     text-shadow: 3px 3px 1px rgb(246, 10, 10);
 }
 .InputElementForSearchInHeaderOuter2{
-    width: 25em;
+    width: 20em;
     border: 0px solid white;
     border-radius: 20px;
     font-size: 16px;
     margin: 0px;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: rgb(170, 178, 185);
+    background-color: rgb(255, 255, 255);
 }
 .InputElementForSearchInHeaderInner1{
     border-radius: 50px;
@@ -49,14 +49,15 @@
     border: 1px solid black;
 }
 .InputElementForSearchInHeaderInner2{
-    width: 20em;
-    height: 3em;
+    width: 15em;
+    height: 2em;
     border: none;
     border-radius: 20px;
     font-size: 16px;
     margin: 0px;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
+    margin-left: 3px;
     background-color: transparent;
 }
 .InputElementForSearchInHeaderOuterIsVisible{
