@@ -53,7 +53,29 @@ function SignUp() {
                         await fetch(`${base_url}/Author/createAuthor`,{
                             method:'POST',
                             headers:{"Content-Type":"application/json"},
-                            body:JSON.stringify({"email":data.email,"password":data.password})
+                            body:JSON.stringify({
+                                "email":data.email,
+                                "password":data.password,
+                                "upVotedArticles":[],
+                                "downVotedArticles":[],
+                                "commentedArticles":[],
+                                "profilePicture":[],
+                                "qualifications":[],
+                                "publicationData":{
+                                    "articlesPublished":0,
+                                    "totalArticleViews":0,
+                                    "totalArticleUpVotes":0,
+                                    "totalArticleDownVotes":0,
+                                    "totalArticleComments":0,
+                                    "singleHighestViews":{"count":1,"articleId":NaN},
+                                    "singleHighestUpVotes":{"count":1,"articleId":NaN},
+                                    "singleHighestDownVotes":{"count":1,"articleId":NaN},
+                                    "singleHighestCommented":{"count":1,"articleId":NaN}
+                                },
+                                "MoreData":{},
+                                "otherData1":{},
+                                "otherData2":{}
+                                })
                         })
                         store.dispatch({
                             type:'SignUp',

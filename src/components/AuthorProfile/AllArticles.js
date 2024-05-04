@@ -24,6 +24,27 @@ function AllArticles() {
     useEffect(()=>{
         let base_url = process.env.REACT_APP_SERVER_BASE_URL
         fetch(`${base_url}/articles/getAll`).then(data=>data.json()).then(x=>updatePostsData(x.articles));
+
+        // console.log(store.getState())
+
+        // fetch(`${base_url}/Author/getActivity/?email=${store.getState().username}`).then(data=>data.json()).then(x=>{
+        //     x = x.data
+        //     // console.log(x,x.upVotedArticles,x.downVotedArticles);
+        //     x.upVotedArticles.forEach(y=>{
+        //         store.dispatch({
+        //             type:'upVoteArticle',
+        //             articleId:y
+        //         })
+        //     })
+        //     x.downVotedArticles.forEach(y=>{
+        //         store.dispatch({
+        //             type:'downVoteArticle',
+        //             articleId:y
+        //         })
+        //     })
+
+        // });
+
     })
     async function IncrementViews(id)
     {
@@ -32,16 +53,64 @@ function AllArticles() {
 
     }
 
-    async function IncrementUpVotes(id)
+    async function IncrementUpVotes(articleId)
     {
+        console.log(articleId,"store object :",store.getState().upVotedPosts)
         let base_url = process.env.REACT_APP_SERVER_BASE_URL
-        await fetch(`${base_url}/articles/upVote/?id=${id}`)
+        if((store.getState().upVotedPosts).includes(articleId))
+        {
+            // delete upvote, decrement action
+            await fetch(`${base_url}/articles/upVoteNegative/?id=${articleId}`)
+            document.querySelector(`.AllArticlesUpvote${articleId}`).style.backgroundColor="white";
+
+            store.dispatch({
+                type:'removeUpVotedArticle',
+                articleId:articleId
+            })
+        }
+        else
+        {
+            // add upvote, increment action
+            await fetch(`${base_url}/articles/upVote/?id=${articleId}`)
+            document.querySelector(`.AllArticlesUpvote${articleId}`).style.backgroundColor="green";
+
+            store.dispatch({
+                type:'upVoteArticle',
+                articleId:articleId
+            })
+
+        }
+        
+        // await fetch(`${base_url}/articles/upVote/?id=${id}`)
     }
 
-    async function IncrementDownVotes(id)
+    async function IncrementDownVotes(articleId)
     {
         let base_url = process.env.REACT_APP_SERVER_BASE_URL
-        await fetch(`${base_url}/articles/downVote/?id=${id}`)
+        if((store.getState().downVotedPosts).includes(articleId))
+        {
+            // delete downvote, decrement action
+            await fetch(`${base_url}/articles/downVoteNegative/?id=${articleId}`)
+            document.querySelector(`.AllArticlesDownVote${articleId}`).style.backgroundColor="white";
+
+            store.dispatch({
+                type:'removeDownVotedArticle',
+                articleId:articleId
+            })
+        }
+        else
+        {
+            // add downvote, increment action
+            await fetch(`${base_url}/articles/downVote/?id=${articleId}`)
+            document.querySelector(`.AllArticlesDownVote${articleId}`).style.backgroundColor="red";
+
+            store.dispatch({
+                type:'downVoteArticle',
+                articleId:articleId
+            })
+
+        }
+        // await fetch(`${base_url}/articles/downVote/?id=${articleId}`)
     }
 
     async function openCommentWindow(data01)
@@ -110,9 +179,18 @@ function AllArticles() {
                         </div>
                         <div className='col-lg-12 row'>
                             <div className='col-lg-3 col-md-4 col-sm-4 col-4'><MdRemoveRedEye color='blue'/> {x.views}</div>
-                            <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button className='incrementDecrementButton' ><BiUpvote color='green' onClick={()=>{IncrementUpVotes(x.articleId);}}/></button> {x.upVotes}</div>
-                            <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button className='incrementDecrementButton' ><BiDownvote color='red' onClick={()=>{IncrementDownVotes(x.articleId);}}/></button>  {x.downVotes}</div>
-                        
+                            {
+                                (store.getState().upVotedPosts && store.getState().upVotedPosts.includes(x.articleId))?
+                                <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button style={{backgroundColor:"green"}} className={`incrementDecrementButton AllArticlesUpvote${x.articleId}`} ><BiUpvote color='green' onClick={()=>{IncrementUpVotes(x.articleId);}}/></button> {x.upVotes}</div>:
+                                <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button className={`incrementDecrementButton AllArticlesUpvote${x.articleId}`} ><BiUpvote color='green' onClick={()=>{IncrementUpVotes(x.articleId);}}/></button> {x.upVotes}</div>
+                           
+                            }
+
+                            {
+                                (store.getState().downVotedPosts && store.getState().downVotedPosts.includes(x.articleId))?
+                                <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button style={{backgroundColor:"red"}} className={`incrementDecrementButton AllArticlesDownVote${x.articleId}`} ><BiDownvote color='red' onClick={()=>{IncrementDownVotes(x.articleId);}}/></button>  {x.downVotes}</div>:
+                                <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button className={`incrementDecrementButton AllArticlesDownVote${x.articleId}`} ><BiDownvote color='red' onClick={()=>{IncrementDownVotes(x.articleId);}}/></button>  {x.downVotes}</div>
+                            }
                         <div className='col-lg-3'><button  className='incrementDecrementButton FaCommentDotssetpadding' onClick={()=>{openCommentWindow(x)}}><FaCommentDots/><label className='AllArticlesTotalNoOfComments'>{String(x.comments.length)}</label></button></div>
                         </div>
                         
