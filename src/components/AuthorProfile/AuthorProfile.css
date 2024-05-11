@@ -205,3 +205,30 @@
     height: 3px;
     
 }
+.MyarticlesSetMaxHeightWithScrolling{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.AllArticlesEditButton{
+    background-color: black;
+    color: white;
+}
+.AllArticlesEditButton:hover{
+    color: red;
+    background-color: black;
+}
+.EditArticleParaScroll{
+    max-height: 300px;
+    overflow-y: scroll;
+    max-width: 300px;
+    background-color: rgb(55, 47, 47);
+    color: white;
+    text-align: left;
+    padding: 5px;
+    border-radius: 10px;
+}
+.EditArticleTextArea{
+    min-height: 200px;
+    min-width: 300px;
+}

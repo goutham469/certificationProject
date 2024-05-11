@@ -45,7 +45,7 @@ function AllArticles() {
 
         // });
 
-    })
+    },[])
     async function IncrementViews(id)
     {
         let base_url = process.env.REACT_APP_SERVER_BASE_URL

@@ -26,7 +26,7 @@ function Login() {
                                     headers:{"Content-Type":"application/json"},
                                     body:JSON.stringify({
                                         "email":data.email,
-                                        "password":data.password,
+                                        "password":data.email,
                                         "upVotedArticles":[],
                                         "downVotedArticles":[],
                                         "commentedArticles":[],

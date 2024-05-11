@@ -17,8 +17,8 @@
 10) add image upload feature during article posting
 
                 STAGE-5
-11) create and maintain meta Data about post likes views
-12) update articles meta Data in Author profile blog Data
+                         11) create and maintain meta Data about post likes views
+                         12) update articles meta Data in Author profile blog Data
 13) update forgot password component (conditional rendering not working)
 14) create Edit, Delete option for articles to author profile
 

@@ -15,6 +15,7 @@ import MyArticles from '../AuthorProfile/MyArticles';
 import NewArticle from '../AuthorProfile/NewArticle';
 import AllArticles from '../AuthorProfile/AllArticles';
 import ViewFullArticle from '../AuthorProfile/ViewFullArticle';
+import EditArticle from '../AuthorProfile/EditArticle';
 
 import UserDashBoard from '../UserDashBoard/UserDashBoard';
 import Blog from '../UserDashBoard/Blog';
@@ -74,6 +75,10 @@ function Description() {
                         {
                             path:'FullArticle',
                             element:<ViewFullArticle/>
+                        },
+                        {
+                            path:'EditArticle',
+                            element:<EditArticle/>
                         }
                     ]
                 },
