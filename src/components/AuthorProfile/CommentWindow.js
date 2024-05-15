@@ -36,6 +36,7 @@ function CommentWindow(props) {
             setWindowStatus:false
         })
         console.log(store.getState().commentWindowStatus)
+        document.querySelector('.toDisplayCommentBoxWithFlex').style.display='none';
     }
     
 

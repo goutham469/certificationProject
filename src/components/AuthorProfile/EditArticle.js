@@ -104,11 +104,48 @@ function EditArticle() {
             <br/>
             {
                 contentStatus==false?<div>
-                    <div className='EditArticleParaScroll'>{content}</div>
+                    <div className='EditArticleParaScroll'>{
+                        content.map((value,key)=>
+                            {
+                                if(value.p)
+                                {
+                                    return <p>{value.p}</p>
+                                }
+                                else if(value.b)
+                                {
+                                    return <div><br/><b>{value.b}</b><br/></div>
+                                }
+                                else if(value.img)
+                                {
+                                    return <img width="300px" src={value.img}></img>
+                                }
+                            }
+                        )
+                    }</div>
                     <br/>
                     <button className='btn btn-success' onClick={()=>{updateContentStatus(true)}}>Change</button>
                 </div>:<div>
-                    <textarea className='EditArticleTextArea' value={content} onChange={(event)=>{updateContent(event.target.value)}}></textarea> <button className='btn btn-success m-2' onClick={()=>{updateContentStatus(false);changeContent()}}>Update</button>
+                    {
+                        content.map((value,key)=>
+                            {
+                                if(value.p)
+                                {
+                                    return <p>{value.p}</p>
+                                }
+                                else if(value.b)
+                                {
+                                    return <div><br/><b>{value.b}</b><br/></div>
+                                }
+                                else if(value.img)
+                                {
+                                    return <img width="300px" src={value.img}></img>
+                                }
+                            }
+                        )
+                    }
+
+                    {/* <textarea className='EditArticleTextArea' value={content} onChange={(event)=>{updateContent(event.target.value)}}></textarea> <button className='btn btn-success m-2' onClick={()=>{updateContentStatus(false);changeContent()}}>Update</button>
+                 */}
                 </div>
             }
             

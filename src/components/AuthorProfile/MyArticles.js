@@ -41,7 +41,30 @@ function MyArticles() {
               <div className='col-lg-4'>posted on {x.dateOfCreation}</div>
               <div className='col-lg-3'></div>
               <div className='col-lg-2'></div>
-              <div className='col-lg-12 bg bg-success'><b className='text-warning'>Content</b><br/>{x.content}</div>
+              <div className='col-lg-12 bg bg-success'>
+                <b className='text-warning'>Content</b>
+                <br/>
+                <div>
+                  {
+                    x.content.map((value,key)=>
+                      {
+                        if(value.p)
+                          {
+                            return <p>{value.p}</p>
+                          }
+                        else if(value.b)
+                          {
+                            return <div><br/><b>{value.b}</b><br/></div>
+                          }
+                        else if(value.img)
+                          {
+                            return <img width="300px" src={value.img}></img>
+                          }
+                      }
+                    )
+                  }
+                </div>
+              </div>
               <div className='col-lg-2'><MdRemoveRedEye/> :{x.views}</div>
               <div className='col-lg-4'><BiUpvote/> : {x.upVotes}</div>
               <div className='col-lg-4'><BiDownvote/> : {x.downVotes}</div>

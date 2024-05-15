@@ -10,6 +10,8 @@ import { BiDownvote } from "react-icons/bi";
 import { FaCommentDots } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
 
+import thumsUp from './thumsUp.png'
+
 import store from '../../store'
 
 import CommentWindow from './CommentWindow';
@@ -46,6 +48,10 @@ function AllArticles() {
         // });
 
     },[])
+
+    console.log(postsData)
+
+    
     async function IncrementViews(id)
     {
         let base_url = process.env.REACT_APP_SERVER_BASE_URL
@@ -55,7 +61,8 @@ function AllArticles() {
 
     async function IncrementUpVotes(articleId)
     {
-        console.log(articleId,"store object :",store.getState().upVotedPosts)
+
+        console.log(articleId,"store articles upvoted :",store.getState().upVotedPosts)
         let base_url = process.env.REACT_APP_SERVER_BASE_URL
         if((store.getState().upVotedPosts).includes(articleId))
         {
@@ -67,6 +74,7 @@ function AllArticles() {
                 type:'removeUpVotedArticle',
                 articleId:articleId
             })
+            
         }
         else
         {
@@ -126,6 +134,7 @@ function AllArticles() {
             setWindowStatus:true
         })
         console.log(store.getState())
+        document.querySelector('.toDisplayCommentBoxWithFlex').style.display='flex';
     }
     
     
@@ -175,13 +184,35 @@ function AllArticles() {
                             </div> */}
                         </div>
                         <div className='col-lg-12'>
-                            <div className='articleData007'>{x.content}</div>
+                            <div className='articleData007'>
+                                {
+                                    x.content.map((value,key)=>
+                                        {
+                                            if(value.p)
+                                            {
+                                                return <p>{value.p}</p>
+                                            }
+                                            else if(value.b)
+                                            {
+                                                return <div><br/><b>{value.b}</b><br/></div>
+                                            }
+                                            else if(value.img)
+                                            {
+                                                return <img width="300px" src={value.img}></img>
+                                            }
+                                        }
+                                    )
+                                }
+                            </div>
                         </div>
                         <div className='col-lg-12 row'>
                             <div className='col-lg-3 col-md-4 col-sm-4 col-4'><MdRemoveRedEye color='blue'/> {x.views}</div>
                             {
                                 (store.getState().upVotedPosts && store.getState().upVotedPosts.includes(x.articleId))?
-                                <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button style={{backgroundColor:"green"}} className={`incrementDecrementButton AllArticlesUpvote${x.articleId}`} ><BiUpvote color='green' onClick={()=>{IncrementUpVotes(x.articleId);}}/></button> {x.upVotes}</div>:
+                                <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button style={{backgroundColor:"green"}} className={`incrementDecrementButton AllArticlesUpvote${x.articleId}`} >
+                                    
+                                    <BiUpvote color='green' onClick={()=>{IncrementUpVotes(x.articleId);}}/></button> {x.upVotes}
+                                    </div>:
                                 <div className='col-lg-3  col-md-4 col-sm-4 col-4'><button className={`incrementDecrementButton AllArticlesUpvote${x.articleId}`} ><BiUpvote color='green' onClick={()=>{IncrementUpVotes(x.articleId);}}/></button> {x.upVotes}</div>
                            
                             }

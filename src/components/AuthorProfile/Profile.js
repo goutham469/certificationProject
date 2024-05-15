@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import store from '../../store';
 import './AuthorProfile.css';
+import { CgProfile } from "react-icons/cg";
 
 function Profile() {
   const [authorData, updateAuthorData] = useState({});
   const [publicationDataOutside,updatePublicationDataOutside] = useState({})
+  let [ImageChoosenAsProfilePic,updateImageChoosenAsProfilePic]=useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +27,8 @@ function Profile() {
         const data = await response.json();
         console.log(data);
         updateAuthorData(data.publicationData);
+
+        
       } catch (error) {
         console.error('An error occurred:', error);
       }
@@ -42,6 +46,44 @@ function Profile() {
     fetchData();
   }, []); // Empty dependency array ensures this effect runs only once
 
+  console.log(authorData)
+
+  async function updateProfilePicture(event)
+  {
+    
+    console.log('outer blog executed')
+    const imageFile = event.target.files[0];
+    if (imageFile) 
+      {
+        console.log('inner block executed');
+
+      // Update image preview
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          updateImageChoosenAsProfilePic(e.target.result);
+        };
+        reader.readAsDataURL(imageFile);
+
+        // Prepare form data
+        const formData = new FormData();
+        formData.append("photo", imageFile);
+        formData.append("email",store.getState().username);
+
+        // Send image file to server
+        let baseUrl = process.env.REACT_APP_SERVER_BASE_URL;
+        const response = await fetch(`${baseUrl}/media/uploadProfileImage`, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            alert('Image uploaded successfully');
+        } else {
+            alert('Image upload failed');
+        }
+      }
+  }
+
   return (
     <div>
       <h2 className='text-warning'>Profile</h2>
@@ -56,6 +98,24 @@ function Profile() {
           }
           <br/><br/>
           <button className='btn btn-info'>change Password</button>
+          <br/>
+          {
+            (authorData.profilePicture && authorData.profilePicture[0] && <img src={authorData.profilePicture[0]}/>)?
+            <div>
+              <img className='profilePictureAtProfileTab' src={authorData.profilePicture[0].profilePicture}/>
+              <button className='btn btn-success' >change profile Picture</button>
+            </div>
+            :
+            <div className='updateProfilePicOuterEdge'>
+                <b>Upload Profile Pic</b>
+                <form>
+                    {ImageChoosenAsProfilePic && <img width="100px" height="100px" src={ImageChoosenAsProfilePic} alt='no Image Choosen'/>}
+                    <input onChange={(event)=>{updateProfilePicture(event)}} type='file' />
+                    <br/>
+                </form>
+            </div>
+          }
+          
         </div>
         <div className='col-lg-5 m-1 personalInfoTab'>
           <h3 className='text-danger'>Publication Data</h3>
