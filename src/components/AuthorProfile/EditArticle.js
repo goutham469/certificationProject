@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './AuthorProfile.css'
 
 function EditArticle() {
@@ -7,6 +7,7 @@ function EditArticle() {
     
     state=state.state
     console.log(state)
+    let navigate = useNavigate();
 
     let [title,updateTitle]=useState(state.title);
     let [category,updateCategory]=useState(state.category)
@@ -35,6 +36,7 @@ function EditArticle() {
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({"articleId":state.articleId})
         })
+        navigate('/AuthorProfile')
         
     }
     async function changeTitle()

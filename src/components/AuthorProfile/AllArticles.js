@@ -198,7 +198,7 @@ function AllArticles() {
                                             }
                                             else if(value.img)
                                             {
-                                                return <img width="300px" src={value.img}></img>
+                                                return <img className='m-2' width="300px" src={value.img}></img>
                                             }
                                         }
                                     )

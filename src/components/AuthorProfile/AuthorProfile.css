@@ -269,3 +269,6 @@
 .thumsUpImage:hover{
     background-color: green;
 }
+.popUpWindowToDeleteArticle{
+    display:none;
+}
