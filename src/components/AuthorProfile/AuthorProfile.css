@@ -113,8 +113,7 @@
     padding: 3px;
     margin-bottom: 2px;
 }
-.FullArticle007{
-    background-image: url('./PaperBackground.png');
+.FullArticle007{ 
     background-repeat: no-repeat;
     color: black;
 }
@@ -145,7 +144,10 @@
 
 
 .allArticlesWindow{
-    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 .CommentsWindowOuterEdge{

@@ -1,10 +1,8 @@
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Description from './components/description/Description';
 import {Helmet} from "react-helmet";
 
-import ImageUpload from './testting/ImageUpload';
 
 function App() {
   return (

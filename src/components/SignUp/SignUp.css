@@ -1,12 +1,12 @@
 .signInForm007 {
     border-radius: 50px;
-    background-color: rgb(187, 172, 172);
+    background-color: rgb(255, 255, 255);
     padding: 10px;
-    animation: borderChange1 2s linear infinite;
+    /* animation: borderChange1 2s linear infinite; */
     margin-bottom: 20px;
 }
 
-@keyframes borderChange1 {
+/* @keyframes borderChange1 {
     0%, 100% {
         border-top: 10px solid black;
         border-left: 0px solid black;
@@ -31,8 +31,17 @@
         border-right: 0px solid black;
         border-bottom: 0px solid black;
     }
+} */
+.signup-or-label{
+    position: relative;
+    background-color: white;
+    top: 32px;
+    padding: 5px;
 }
-
+.signup-horizontal-line{
+    border-top: 1px solid black;
+    width: 250px;
+}
 
 .signInFormRadio{
     background-color: rgb(255, 255, 255);
@@ -81,6 +90,18 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.signup-button{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 2px;
+    font-size: 16px;
+}
+.signup-button:hover{
+    background-color: black;
+    color: white;
+}
 .headertobehighlighted{
     color: rgb(255, 230, 3);
 }
@@ -92,8 +113,33 @@
     color: rgb(255, 255, 255);
 }
 .ToAlignItemsToPerfectCenter{
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}  
+
+/* form elements */
+.signup-email-label{
+    position: relative;
+    top: 25px;
+    background-color: white;
+    text-align: left;
+}
+.signup-email{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.signup-password-label{
+    position: relative;
+    top: 25px;
+    background-color: white;
+}
+.signup-password{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid black;
 }

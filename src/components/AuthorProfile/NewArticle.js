@@ -1,5 +1,6 @@
 import React from 'react'
 import './AuthorProfile.css'
+import './NewArticle.css'
 import { useState } from 'react';
 import store from '../../store';
 import { useNavigate } from 'react-router-dom';
@@ -105,7 +106,6 @@ function NewArticle() {
         }
     }
     
-
     async function addImageToBody(event) {
         event.preventDefault();
     
@@ -174,10 +174,10 @@ function NewArticle() {
                 }
             </div>
 
-            <form className='col-lg-6 m-2'>
+            <form className='col-lg-6 m-2'> 
                 <input className='title m-2' placeholder='title' onChange={(event)=>{updateTitle(event.target.value)}}/><br/>
                 <p className='text-danger'>{titleError}</p>
-
+                 
                 <input className='m-2 title' placeholder='categery' onChange={(event)=>{updateCategory(event.target.value)}} ></input>
                     <br/>
                 <p className='text-danger'>{categoryError}</p>
@@ -185,13 +185,13 @@ function NewArticle() {
                 {
                     (changeState==1)?
                     <div>
-                        <textarea className='body-area m-2' placeholder='body' onChange={(event)=>{updateParaBody(event.target.value)}}/><br/>
-                        <button onClick={(event)=>{addParagraph(event)}}><FaCheck size={30}/></button>
+                        <textarea className='new-article-textarea' placeholder='enter some text here .' onChange={(event)=>{updateParaBody(event.target.value)}}/><br/>
+                        <FaCheck size={30} onClick={(event)=>{addParagraph(event)}}></FaCheck>
                     </div>:
                     (changeState==2)?
                     <div>
-                        <input className='m-2' type='text' placeholder='heading' onChange={(event)=>{updateBoldTextBody(event.target.value)}}/>
-                        <button onClick={(event)=>{addHeading(event)}}><FaCheck size={30}/></button>
+                        <input style={{borderRadius:"5px"}} type='text' placeholder='heading' onChange={(event)=>{updateBoldTextBody(event.target.value)}}/>
+                        <FaCheck size={30}  onClick={(event)=>{addHeading(event)}}/>
                     </div>:
                     (changeState==3)?
                     <div>
@@ -206,10 +206,10 @@ function NewArticle() {
                 <p className='text-danger'>{bodyError}</p>
 
 
-                <div className='row'>
-                    <div className='col-lg-3 btn btn-info m-2' onClick={()=>{updateChangeState(1)}}>+Para</div>
-                    <div className='col-lg-3 btn btn-info m-2' onClick={()=>{updateChangeState(2)}}>+Heading</div>
-                    <div className='col-lg-3 btn btn-info m-2' onClick={()=>{updateChangeState(3)}}>+Image</div>
+                <div>
+                    <button className='new-article-navigation-button' onClick={(event)=>{event.preventDefault();updateChangeState(1)}}>+para</button> 
+                    <button className='new-article-navigation-button' onClick={(event)=>{event.preventDefault();updateChangeState(2)}}>+Heading</button> 
+                    <button className='new-article-navigation-button' onClick={(event)=>{event.preventDefault();updateChangeState(3)}}>+Image</button>
                 </div> 
 
                 <button className='btn btn-success m-2' onClick={(event)=>{post(event)}}>POST</button>

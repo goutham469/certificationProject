@@ -7,8 +7,11 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { IoMdSend } from "react-icons/io";
 import vnrvjietLogo from './image.png'
+import { useNavigate } from 'react-router-dom';
 
-function Footer() {
+function Footer() { 
+
+    const navigate = useNavigate()
   return (
     <div className='footer row'>
         <div className='col-lg-2 p-3'>
@@ -42,7 +45,7 @@ function Footer() {
             <p  className='FooterTextDecorationSetToNonUnderlined'>get API key</p>
             <a  className='FooterTextDecorationSetToNonUnderlined' href='https://certificationprojectserver.onrender.com/' target='_blank'>services available</a>
             <p  className='FooterTextDecorationSetToNonUnderlined'>pricing</p>
-            <p className='FooterTextDecorationSetToNonUnderlined'>Contact sales team</p>
+            <p className='FooterTextDecorationSetToNonUnderlined'   onClick={()=>navigate('/admin')}>admin dashboard</p>
         </div>
         <div className='col-lg-3 p-3'>
             <p className='text-info'><b>Help</b></p>

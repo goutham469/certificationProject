@@ -20,6 +20,8 @@ import EditArticle from '../AuthorProfile/EditArticle';
 import UserDashBoard from '../UserDashBoard/UserDashBoard';
 import Blog from '../UserDashBoard/Blog';
 import UserProfile from '../UserDashBoard/UserProfile';
+import ViewAuthor from '../ViewAuthor/ViewAuthor';
+import Admin from '../Admin/Admin';
 
 
 function Description() {
@@ -100,8 +102,20 @@ function Description() {
                             element:<UserProfile/>
                         }
                     ]
+                },
+                {
+                    path:'/author/:authorName',
+                    element:<ViewAuthor />
                 }
             ]
+        },
+        {
+            path:'admin',
+            element:<Admin/>
+        },
+        {
+            path:'*',
+            element:<h1>Route not found</h1>
         }
     ])
   return (

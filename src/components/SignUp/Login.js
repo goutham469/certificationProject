@@ -14,7 +14,7 @@ function Login() {
                         console.log(decodedString)
                         
                         let data = {"email":decodedString.email}
-
+ 
                         let base_url = process.env.REACT_APP_SERVER_BASE_URL;
 
                         await fetch(`${base_url}/Author/checkAuthorName/?email=${data.email}`).then(z=>z.json())

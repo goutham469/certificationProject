@@ -1,6 +1,7 @@
 .footer{
     min-height: 20vh;
     background-color: rgb(66, 72, 47);
+    margin: 0px;
 }
 .profileImage001{
     width: 180px;

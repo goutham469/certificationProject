@@ -94,13 +94,13 @@ function Profile() {
           <b>{store.getState().username}</b>
           <br />
           {
-            (authorData.password && <label>password : <b>{authorData.password}</b></label>)?<label>password : <b>{authorData.password}</b></label>:<label>password : <b>problem at server</b></label>
+            (authorData&&authorData.password && <label>password : <b>{authorData.password}</b></label>)?<label>password : <b>{authorData.password}</b></label>:<label>password : <b>problem at server</b></label>
           }
           <br/><br/>
           <button className='btn btn-info'>change Password</button>
           <br/>
           {
-            (authorData.profilePicture && authorData.profilePicture[0] && <img src={authorData.profilePicture[0]}/>)?
+            (authorData&&authorData.profilePicture && authorData.profilePicture[0] && <img src={authorData.profilePicture[0]}/>)?
             <div>
               <img className='profilePictureAtProfileTab' src={authorData.profilePicture[0].profilePicture}/>
               <button className='btn btn-success' >change profile Picture</button>

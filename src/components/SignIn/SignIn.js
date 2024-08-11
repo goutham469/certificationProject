@@ -8,10 +8,9 @@ import Login2 from './Login2';
 
 function SignIn() {
     let navigagate = useNavigate();
+ 
 
-    let [response,updateResponse]=useState({})
-
-    let [typeUser,updateTypeUser]=useState()
+    let [typeUser,updateTypeUser]=useState('author')
     let [email,updateEmail]=useState()
     let [password,updatePassword]=useState()
 
@@ -71,7 +70,7 @@ function SignIn() {
                         }
                         else
                         {
-                            alert(`${x.message}`)
+                            alert(`${x.message}`) 
                         }
                     }) 
                 }
@@ -81,27 +80,35 @@ function SignIn() {
     }
   return (
     <div className='row SignInComponentToSetBackGroungImage'>
-        <div className='col-lg-4'></div>
+        <div className='col-lg-4'></div> 
         <div className='col-lg-3'>
-            <h1 className='headertobehighlighted'>Login</h1>
+            
             <form className='signInForm007'>
-                <input onClick={(event)=>{updateTypeUser('author')}} className='m-2 signInFormRadio001' type='radio' id='author' name='author-user'></input><label for='author' className='signInFormRadio'>author</label>
+                <p style={{color:"black",fontSize:"20px",fontWeight:900}}>Login</p>
+                {/* <input onClick={(event)=>{updateTypeUser('author')}} className='m-2 signInFormRadio001' type='radio' id='author' name='author-user'></input><label for='author' className='signInFormRadio'>author</label>
                 
                 <input onClick={(event)=>{updateTypeUser('user')}} className='m-2' type='radio' id='user' name='author-user'/><label for='user' className='signInFormRadio'>user</label>
                 <input onClick={(event)=>{updateTypeUser('Admin')}} className='m-2' type='radio' id='admin' name='author-user'/><label for='admin' className='signInFormRadio'>Admin</label>
+
                 <p className='text-danger fs-7'>{typeUserError}</p>
-                <br/>
-                <input placeholder='email' type='email' className='email m-3 emailInputField' onChange={(event)=>{updateEmail(event.target.value)}} />
-                <p className='text-danger fs-7'>{emailError}</p>
-                
-                <input placeholder='password' type='password' className='password m-3 emailInputField' onChange={(event)=>{updatePassword(event.target.value)}} />
-                <p className='text-danger fs-7'>{passwordError}</p>
-                <button className='btn formButton' onClick={(event)=>{login(event)}}>Login</button>
-                <br/>
+                <br/> */}
+
                 <div className='ToAlignItemsToPerfectCenter'>
                     <Login2/>
                 </div>
-                <br/>
+                <label className='signup-or-label'>or</label><br/>
+                <label className='signup-horizontal-line'></label><br/>
+                
+                <label className='signup-email-label'>email</label><br/>
+                <input placeholder='email' type='email' className='signup-email m-3' onChange={(event)=>{updateEmail(event.target.value)}} />
+                <p className='text-danger fs-7'>{emailError}</p>
+
+                <label className='signup-password-label'>password</label><br/>
+                <input placeholder='password' type='password' className='signup-password m-3' onChange={(event)=>{updatePassword(event.target.value)}} />
+                <p className='text-danger fs-7'>{passwordError}</p>
+                <button className='signup-button' onClick={(event)=>{login(event)}}>login</button>
+                <br/> 
+
                 <Link className='LinkToForgotPassword' to='/accountRecovery'>forgot password</Link>
             </form>
         </div>  

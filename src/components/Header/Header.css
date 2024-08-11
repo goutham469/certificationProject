@@ -1,11 +1,26 @@
 .header{
-    min-height: 30vh;
     background-image: url('./HeaderBackground.png');
     background-repeat: no-repeat;
     background-attachment:local;
     background-size: cover;
     padding-top: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     
+}
+.header-image{
+    position: relative;
+    top: -50px;
+    right: 50px;
+}
+.header-title{
+    color: rgb(255, 255, 255);
+    position: relative; 
+    right: 50px;
+    font-size: 26px;
+    font-weight: 900;
 }
 .button008{
     height: 40px;
@@ -16,21 +31,24 @@
     margin-left: 5px;
     padding: 0px;
 }
-.button008:hover{
-    color:white;
-    text-shadow: 3px 3px 1px red,-1px -1px 1px red;
-}
-.button008:focus{
-    background-color: black;
+.header-button{
+    margin: 0px;
+    background-color: none;
     color: gold;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-button:hover{
+    color: red;
 }
 .text-heading-mainContent{
     color: white;
     font-size: 26px;
-    font-weight: 900;
+    font-weight: 900; 
 }
 .text-heading-mainContent{
     text-shadow: 3px 3px 1px rgb(246, 10, 10);
+    margin-top: 30px;
 }
 .InputElementForSearchInHeaderOuter2{
     width: 20em;

@@ -7,7 +7,7 @@ import googleImage from './googleImage.png'
 
 function SignUp() {
     let navigagate=useNavigate();
-    let [typeUser,updateTypeUser]=useState()
+    let [typeUser,updateTypeUser]=useState('author')
     let [email,updateEmail]=useState()
     let [password,updatePassword]=useState()
 
@@ -19,9 +19,6 @@ function SignUp() {
     {
         event.preventDefault();
 
-        if(typeUser!=undefined && typeUser!=null)
-        {
-            updateTypeUserError();
             if(email!=undefined && email!=null)
             {
                 updateEmailError();
@@ -84,36 +81,40 @@ function SignUp() {
                         })
                         navigagate('/AuthorProfile')
                     }
-                    
+                     
                 }
                 else{updatePasswordError('* enter your password *');}
             }else{updateEmailError('* enter your email id *');}
-        }else{updateTypeUserError('*choose the type of user *');}
     }
   return (
     <div className='row SignInComponentToSetBackGroungImage'>
         <div className='col-lg-4'></div>
         <div className='col-lg-3'>
-            <h1 className='headertobehighlighted'>SignUp or register</h1>
+            <br/>
             <form className='signInForm007'>
-                <input onClick={(event)=>{updateTypeUser('author')}} className='m-2' type='radio' id='author' name='author-user'></input><label for='author'>author</label>
+                <p style={{color:"black",fontSize:"20px",fontWeight:900}}>SignUp or register</p>
+                {/* <input onClick={(event)=>{updateTypeUser('author')}} className='m-2' type='radio' id='author' name='author-user'></input><label for='author'>author</label>
                 
                 <input onClick={(event)=>{updateTypeUser('user')}} className='m-2' type='radio' id='user' name='author-user'/><label for='user'>user</label>
-                
-                <p className='text-danger fs-7'>{typeUserError}</p>
-                <br/>
-                <input placeholder='email' type='email' className='email m-3' onChange={(event)=>{updateEmail(event.target.value)}} />
-                <p className='text-danger fs-7'>{emailError}</p>
-                
-                <input placeholder='password' type='password' className='password m-3' onChange={(event)=>{updatePassword(event.target.value)}} />
-                <p className='text-danger fs-7'>{passwordError}</p>
-                <button className='btn btn-success p-2 m-2' onClick={(event)=>{login(event)}}>Sign Up</button>
-                <br/>
+                 */}
+                {/* <p className='text-danger fs-7'>{typeUserError}</p> */}
+                <label>continue with </label>
                 <Link to='/OauthSignUp'><img width="50px" src={googleImage}/></Link>
                 <br/>
-                <br/>
+                <label className='signup-or-label'>or</label><br/>
+                <label className='signup-horizontal-line'></label><br/>
+                
+                <label className='signup-email-label'>email</label><br/>
+                <input placeholder='email' type='email' className='signup-email m-3' onChange={(event)=>{updateEmail(event.target.value)}} />
+                <p className='text-danger fs-7'>{emailError}</p>
+
+                <label className='signup-password-label'>password</label><br/>
+                <input placeholder='password' type='password' className='signup-password m-3' onChange={(event)=>{updatePassword(event.target.value)}} />
+                <p className='text-danger fs-7'>{passwordError}</p>
+                <button className='signup-button' onClick={(event)=>{login(event)}}>Sign Up</button>
+                <br/> 
                 <Link className='LinkToForgotPassword' to='/accountRecovery'>forgot password</Link>
-            </form>
+            </form>  
         </div>  
     </div>
   )

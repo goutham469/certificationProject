@@ -2,10 +2,10 @@
     border-radius: 50px;
     background-color: rgb(187, 172, 172);
     padding: 10px;
-    animation: borderChange1 2s linear infinite;
+    /* animation: borderChange1 2s linear infinite; */
     margin-bottom: 20px;
 }
-
+/*  
 @keyframes borderChange1 {
     0%, 100% {
         border-top: 8px solid black;
@@ -31,7 +31,7 @@
         border-right: 0px solid black;
         border-bottom: 0px solid black;
     }
-}
+} */
 
 
 .signInFormRadio{

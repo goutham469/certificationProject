@@ -10,12 +10,10 @@ import { BiDownvote } from "react-icons/bi";
 import { FaCommentDots } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
 
-import thumsUp from './thumsUp.png'
 
 import store from '../../store'
 
-import CommentWindow from './CommentWindow';
-import { type } from '@testing-library/user-event/dist/type';
+import CommentWindow from './CommentWindow'; 
 
 function AllArticles() {
     let navigate=useNavigate();
@@ -150,7 +148,12 @@ function AllArticles() {
                 postsData.map(x=><div className='col-lg-3 m-2 row'>
                     <div className='userBlogContentItem02' onClick={()=>{console.log(x)}} >
 
-                        <div className='col-lg-10'><center><b className='textInCenter011'>{x.title}</b><sub className='m-1 fs-6'>-{x.category}</sub></center></div>
+                        <div className='col-lg-10'>
+                            <center>
+                                <b className='textInCenter011'>{x.title}</b>
+                                {/* <sub className='m-1 fs-6'>-{x.category}</sub> */}
+                            </center>
+                        </div>
 
                         <div className='col-lg-12 row'>
                             <div className='col-lg-2'>
@@ -162,7 +165,7 @@ function AllArticles() {
                             <div className='col-lg-10 row'>
                                 {/* author name,qualifications */}
                                 <div className='col-lg-12'>
-                                    <a href={``}><b>{x.author}</b></a><br/>
+                                    <p onClick={()=>navigate(`/author/${x.author}`)}><b>{x.author}</b></p><br/>
                                     {
                                         (x.authorQualification)?<b>{x.authorQualification}</b>:<b>new to Blog</b>
                                     }
@@ -171,14 +174,14 @@ function AllArticles() {
                         </div>
                         <div className='col-lg-12 row'>
                             {/* author followers,posted,last edited */}
-                            <div className='col-lg-4'>
+                            {/* <div className='col-lg-4'>
                                 {
                                     (x.Followers)?<p>{x.Followers} followers</p>:<p>no followers</p>
                                 }
-                            </div>
-                            <div className='col-lg-7'>
+                            </div> */}
+                            {/* <div className='col-lg-7'>
                                 posted on : {x.dateOfCreation}
-                            </div>
+                            </div> */}
                             {/* <div className='col-lg-5'>
                                 modified on : {x.lastUpdate}
                             </div> */}
